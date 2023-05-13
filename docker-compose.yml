@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  app:
+    image: go-api-experiment
+    build:
+      args:
+        target: dev
+    volumes:
+      - .:/go/src/app
+    ports:
+      - "11323:1323"
+  db:
+    image: mysql:8.0.33
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "13306:3306"
+  redis:
+    image: redis:7.0.11
+    ports:
+      - "16379:6379"
+
+volumes:
+  db_data:
