@@ -1,4 +1,4 @@
-FROM golang:1.20-alpine AS builder
+FROM golang:1.20.1-alpine AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY --from=deploy-builder /app/go-api-experiment .
 CMD ["./go-api-experiment"]
 
 # ------------------------------
-FROM golang:1.20-alpine AS dev
+FROM golang:1.20.1-alpine AS dev
 WORKDIR /go/src/app
 RUN go install github.com/cosmtrek/air@latest
 CMD ["air", "-c", ".air.toml"]
