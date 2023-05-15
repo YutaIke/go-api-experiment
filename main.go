@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	// reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll reviewdog test lll
 	e := echo.New()
 
 	e.Logger.SetLevel(log.DEBUG)
