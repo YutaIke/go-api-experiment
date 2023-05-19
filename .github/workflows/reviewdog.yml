@@ -1,0 +1,18 @@
+# reviewdogでgolangci-lintを実行する
+name: reviewdog
+
+on: [pull_request]
+
+jobs:
+  golangci-lint:
+    name: runner / golangci-lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: golangci-lint
+        uses: reviewdog/action-golangci-lint@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          level: warning
+          golangci_lint_flags: "--config=.golangci.yml"
+          reporter: github-pr-review

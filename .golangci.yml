@@ -1,0 +1,35 @@
+run:
+  concurrency: 4
+  go: "1.20.1"
+
+output:
+  format: colored-line-number
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - errcheck
+    - exhaustive
+    - exportloopref
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - goimports
+    - gomnd
+    - gosimple
+    - gosec
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - nilerr
+    - prealloc
+    - revive
+    - staticcheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
