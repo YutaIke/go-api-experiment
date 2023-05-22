@@ -3,6 +3,7 @@ services:
   app:
     image: go-api-experiment
     build:
+      context: ./cmd/server
       args:
         target: dev
     volumes:
