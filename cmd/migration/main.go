@@ -28,7 +28,8 @@ func main() {
 		schema.WithDialect(dialect.MySQL),            // Ent dialect to use
 		schema.WithFormatter(atlas.DefaultFormatter),
 	}
-	if len(os.Args) != 2 {
+	requiredArgsNum := 2
+	if len(os.Args) != requiredArgsNum {
 		log.Fatal("migration name is required. Use: 'go run -mod=mod ent/migrate/main.go <name>'")
 	}
 	// Generate migrations using Atlas support for MySQL (note the Ent dialect option passed above).
