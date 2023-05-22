@@ -49,7 +49,7 @@ ent-generate: ## Generate ent code
 	$(GO) generate ./ent
 
 ent-generate-migration: ## Migrate ent schema
-	$(GO) run -mod=mod ./cmd/migration/main.go test
+	$(GO) run -mod=mod ./cmd/migration/main.go test ## TODO: change test to use input args
 
 ent-migrate-apply-local: ## Apply ent migration to local db
 	 atlas migrate apply 
