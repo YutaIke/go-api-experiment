@@ -32,7 +32,7 @@ test: ## Run test
 	$(GO) test -race -shuffle=on ./...
 
 lint: install-golangci-lint install-reviewdog
-	golangci-lint run --config .golangci.yml | reviewdog -f=golangci-lint -diff "git diff HEAD^"   
+	golangci-lint run --config .golangci.yml | reviewdog -f=golangci-lint -diff "git diff main"   
 
 install-golangci-lint: ## Install golangci-lint
 	$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
