@@ -4,6 +4,10 @@ DATA_SOURCE_URL := mysql://root:root@localhost:13306/go-api-experiment-local?cha
 MIGRATION_FILE_PATH := file://ent/migrate/migrations
 
 DOCKDR_TAG := latest
+setup:
+	brew install ariga/tap/atlas
+	go install github.com/joho/godotenv/cmd/godotenv@latest
+
 build: ## Build docker image to deploy
 	docker build -t go-api-experiment:${DOCKDR_TAG}
 

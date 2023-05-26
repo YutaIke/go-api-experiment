@@ -20,7 +20,8 @@ This repository is designed to run for developing RESTful API services in Go. It
 
 ## Configuration
 
-- [(TODO)godotenv](https://github.com/joho/godotenv)
+- [env](https://github.com/caarlos0/env)
+- [godotenv](https://github.com/joho/godotenv)
 
 ## Testing
 
@@ -29,6 +30,10 @@ This repository is designed to run for developing RESTful API services in Go. It
   - [(TODO)go-cmp](https://github.com/google/go-cmp)
 - Mock
   - [(TODO)gomock](https://github.com/golang/mock)
+
+## Utilities
+
+- [Air](https://github.com/cosmtrek/air)
 
 ## Database
 
