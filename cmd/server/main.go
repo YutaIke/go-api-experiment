@@ -24,7 +24,7 @@ func main() {
 
 	e.GET("/", hello)
 
-	e.Logger.Fatal(e.Start(config.Adderss))
+	e.Logger.Fatal(e.Start(config.Address))
 }
 
 func hello(c echo.Context) error {

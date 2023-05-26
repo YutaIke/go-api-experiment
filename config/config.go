@@ -8,7 +8,7 @@ import (
 )
 
 type Configration struct {
-	Adderss          string `env:"ADDRESS" envDefault:":1323"`
+	Address          string `env:"ADDRESS" envDefault:":1323"`
 	Dialect          string `env:"DIALECT" envDefault:"mysql"`
 	ConnectionString string `env:"CONNECTION_STRING,required"`
 }
