@@ -10,6 +10,12 @@ require (
 require github.com/caarlos0/env/v8 v8.0.0
 
 require (
+	go.uber.org/atomic v1.11.0 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
+	go.uber.org/zap v1.24.0 // indirect
+)
+
+require (
 	ariga.io/atlas v0.10.2-0.20230427182402-87a07dfb83bf
 	entgo.io/ent v0.12.3
 	github.com/agext/levenshtein v1.2.1 // indirect
