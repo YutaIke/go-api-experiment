@@ -17,10 +17,18 @@ func main() {
 
 	e := echo.New()
 
-	e.Logger.SetLevel(log.DEBUG)
+	e.Logger.SetLevel(log.ERROR) // e.Logger is error logger, not access logger.
 
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
+	// Common settings for all routes
+	e.Use(middleware.Logger())  // access logger
+	e.Use(middleware.Recover()) // recover from panic
+	e.Use(middleware.Secure())  // provide protection against injection attacks
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{"GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"},
+	}))
+	// TODO: Error Handling to send error to Sentory or so.
+	// e.HTTPErrorHandler = func(err error, c echo.Context) { ... }
 
 	e.GET("/", hello)
 
