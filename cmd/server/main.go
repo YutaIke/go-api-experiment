@@ -16,12 +16,18 @@ func main() {
 		log.Fatal(err)
 	}
 
+	logger, _ := zap.NewProduction()
+	defer func() {
+		err := logger.Sync()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+	zap.ReplaceGlobals(logger)
+
 	e := echo.New()
 	e.Logger.SetLevel(log.ERROR) // e.Logger is error logger, not access logger.
 
-	logger, _ := zap.NewProduction()
-	defer logger.Sync()
-	zap.ReplaceGlobals(logger)
 	e.Use(middleware.RequestLoggerWithConfig(middleware.RequestLoggerConfig{
 		LogRequestID:     true,
 		LogProtocol:      true,
