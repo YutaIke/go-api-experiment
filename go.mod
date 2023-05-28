@@ -2,17 +2,19 @@ module github.com/YutaIke/go-api-experiment
 
 go 1.20
 
+require github.com/labstack/gommon v0.4.0
+
 require (
-	github.com/labstack/echo v3.3.10+incompatible
-	github.com/labstack/gommon v0.4.0
+	github.com/caarlos0/env/v8 v8.0.0
+	github.com/labstack/echo/v4 v4.10.2
+	go.uber.org/zap v1.24.0
 )
 
-require github.com/caarlos0/env/v8 v8.0.0
-
 require (
+	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	go.uber.org/zap v1.24.0 // indirect
+	golang.org/x/time v0.3.0 // indirect
 )
 
 require (
@@ -20,7 +22,6 @@ require (
 	entgo.io/ent v0.12.3
 	github.com/agext/levenshtein v1.2.1 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/go-openapi/inflect v0.19.0 // indirect
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/google/go-cmp v0.5.6 // indirect
